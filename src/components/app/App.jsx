@@ -1,5 +1,6 @@
 import React from 'react';
+import ColorRandomizer from '../../containers/Color-Randomizer';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <ColorRandomizer />;
 }

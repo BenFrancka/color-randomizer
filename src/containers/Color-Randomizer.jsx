@@ -6,25 +6,27 @@ class ColorRandomizer extends Component {
       color: '#000000'
     };
 
-    const setColor = () => {
-        const randomizeColor = 
-        Math.floor(Math.random()*16777215).toString(16);
-        const randomColorString = '#' + randomizeColor;
+    setColor = () => {
+      const randomColor = 
+        Math.floor(Math.random() * 16777215).toString(16);
+      const randomColorString = '#' + randomColor;
+      return randomColorString;
     }
 
-    
-
-
+    handleColorChange = (event) => {
+      setInterval(this.setState({ [event.target.style]: this.setColor }), 1000);
+    }
 
     render() {
       return (
         <>
-          <Display></Display>
+          <Display
+            color={this.state.color}
+            onChange={this.handleColorChange}
+          />
         </>
       );
     }
-
-
 }
 
 export default ColorRandomizer;
