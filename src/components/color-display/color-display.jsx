@@ -6,7 +6,7 @@ const Display = ({ color }) => {
   return <div style={{ backgroundColor: color }}></div>;
 };
 
-Display.proptypes = {
+Display.propTypes = {
   color: PropTypes.string.isRequired
 };
 

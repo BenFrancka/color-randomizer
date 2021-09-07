@@ -13,8 +13,8 @@ class ColorRandomizer extends Component {
       return randomColorString;
     }
 
-    handleColorChange = (event) => {
-      setInterval(this.setState({ [event.target.style]: this.setColor }), 1000);
+    handleColorChange = () => {
+      setInterval(this.setState({ color: this.setColor }), 1000);
     }
 
     render() {
