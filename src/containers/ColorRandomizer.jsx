@@ -3,27 +3,35 @@ import Display from '../components/colorDisplay/colorDisplay.jsx';
 
 class ColorRandomizer extends Component {
     state = {
-      color: '#000000'
+      lastColor: '',
+      color: 'red'
     };
 
-    setColor = () => {
-      const randomColor = 
-        Math.floor(Math.random() * 16777215).toString(16);
-      console.log(randomColor);
-      const randomColorString = '#' + randomColor;
-      return randomColorString;
+    generateRandomColorHex() {
+      const randomHex = () => Math.floor(Math.random() * 256).toString(16);
+
+      return `#${randomHex()}${randomHex()}${randomHex()}`.padEnd(7, '0');
     }
 
     handleColorChange = () => {
-      setInterval(this.setState({ color: this.setColor }), 1000);
+      const newColor = this.generateRandomColorHex();
+
+      this.setState(({ color }) => ({
+        lastColor: color,
+        color: newColor
+      }));
+    }
+
+    componentDidMount() {
+      setInterval(this.handleColorChange.bind(this), 1000);
     }
 
     render() {
       return (
         <>
           <Display
+            lastColor={this.state.lastColor}
             color={this.state.color}
-            onChange={this.handleColorChange}
           />
         </>
       );
