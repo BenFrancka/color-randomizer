@@ -9,20 +9,20 @@ class ColorRandomizer extends Component {
 
     generateRandomColorHex() {
       //generates a random hex 
-      const randomHex = () => Math.floor(Math.random() * 256).toString(16);
+      const newHex = () => Math.floor(Math.random() * 256).toString(16);
 
       
-      /*Adds # and calls randomHex 3x for variety Limits character length to 7*/
-      return `#${randomHex()}${randomHex()}${randomHex()}`.padEnd(7, '0');
+      /*Adds # and calls newHex 3x for variety Limits character length to 7*/
+      return `#${newHex()}${newHex()}${newHex()}`.padEnd(7, '0');
     }
 
     //sets state to randomly generated color
     handleColorChange = () => {
-      const newColor = this.generateRandomColorHex();
+      const randomColor = this.generateRandomColorHex();
 
       this.setState(({ color }) => ({
         lastColor: color,
-        color: newColor
+        color: randomColor
       }));
     }
 
