@@ -1,6 +1,15 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 div {
-    height: 10rem;
-    width: 10rem;
+    height: 20rem;
+    width: 20rem;
     border: solid black 1rem;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

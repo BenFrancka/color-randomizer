@@ -9,6 +9,7 @@ class ColorRandomizer extends Component {
     setColor = () => {
       const randomColor = 
         Math.floor(Math.random() * 16777215).toString(16);
+        console.log(randomColor);
       const randomColorString = '#' + randomColor;
       return randomColorString;
     }
