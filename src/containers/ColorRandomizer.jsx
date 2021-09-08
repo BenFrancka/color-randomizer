@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Display from '../components/color-display';
+import Display from '../components/colorDisplay/colorDisplay.jsx';
 
 class ColorRandomizer extends Component {
     state = {
